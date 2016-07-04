@@ -1,0 +1,1 @@
+DEBUG=peliculas:* npm start

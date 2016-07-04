@@ -1,0 +1,24 @@
+<section>
+  <div class="page-header">
+    <h1 data-ng-bind="vm.pelicula.name"></h1>
+  </div>
+  <div class="pull-right">
+    <a class="btn btn-primary"
+       data-ui-sref="peliculas.edit({ peliculaId: vm.pelicula._id })">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" data-ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <div>
+    <img src="{{vm.pelicula.imageURL}}" height="350">
+  </div>
+  <small>
+    <em class="text-muted">
+      Creada en 
+      <span data-ng-bind="vm.pelicula.created | date:'mediumDate'"></span>
+    </em>
+  </small>
+  <p class="lead" data-ng-bind="vm.pelicula.content"></p>
+</section>

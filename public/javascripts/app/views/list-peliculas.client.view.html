@@ -1,0 +1,21 @@
+<section>
+  <div class="page-header">
+    <h1>Todas</h1>
+  </div>
+
+  <div class="list-group">
+    <a data-ng-repeat="pelicula in vm.peliculas"
+       data-ui-sref="peliculas.view({ peliculaId: pelicula._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Creada el
+        <span data-ng-bind="pelicula.created | date:'mediumDate'"></span>
+      </small>
+      <h4 class="list-group-item-heading" data-ng-bind="pelicula.name"></h4>
+      <img src="{{pelicula.imageURL}}" height="120">
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" data-ng-if="vm.peliculas.$resolved && !vm.peliculas.length">
+    No hay películas. ¿Deseas <a data-ui-sref="peliculas.create">crear una</a>?
+  </div>
+</section>
